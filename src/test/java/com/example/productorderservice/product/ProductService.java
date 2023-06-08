@@ -7,9 +7,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.transaction.Transactional;
+
 @RestController
 @RequestMapping("/products")
-public class ProductService {
+class ProductService {
 
     private final ProductPort productPort;
 
@@ -18,6 +20,7 @@ public class ProductService {
     }
 
     @PostMapping
+    @Transactional
     public ResponseEntity<Void> addProduct(@RequestBody final AddProductRequest request) {
         final Product product = new Product(request.name(), request.price(), request.discountPolicy());
         productPort.save(product);
