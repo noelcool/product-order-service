@@ -1,5 +1,6 @@
 package com.example.productorderservice.product;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,8 +12,9 @@ import javax.transaction.Transactional;
 
 @RestController
 @RequestMapping("/products")
-class ProductService {
+public class ProductService {
 
+    @Autowired
     private final ProductPort productPort;
 
     ProductService(final ProductPort productPort) {
@@ -25,5 +27,15 @@ class ProductService {
         final Product product = new Product(request.name(), request.price(), request.discountPolicy());
         productPort.save(product);
         return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+
+    public GetProductResponse getProduct(long productId) {
+        Product product = productPort.getProduct(productId);
+        return new GetProductResponse(
+                product.getId(),
+                product.getName(),
+                product.getPrice(),
+                product.getDiscountPolicy()
+        );
     }
 }
