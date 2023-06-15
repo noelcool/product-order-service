@@ -1,4 +1,4 @@
-package com.example.productorderservice;
+package com.example.productorderservice.product;
 
 import com.example.productorderservice.product.*;
 import io.restassured.RestAssured;

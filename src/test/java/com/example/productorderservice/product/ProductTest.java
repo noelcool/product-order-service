@@ -1,7 +1,5 @@
-package com.example.productorderservice;
+package com.example.productorderservice.product;
 
-import com.example.productorderservice.product.DiscountPolicy;
-import com.example.productorderservice.product.Product;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
