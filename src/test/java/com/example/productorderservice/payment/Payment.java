@@ -24,6 +24,10 @@ class Payment {
     }
 
     public int getPrice() {
-        order.getTotalPrice();
+        return order.getTotalPrice();
+    }
+
+    public String getCardNumber() {
+        return cardNumber;
     }
 }
