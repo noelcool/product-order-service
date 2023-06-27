@@ -9,7 +9,7 @@ public class OrderSteps {
     public OrderSteps() {
     }
 
-    static ExtractableResponse<Response> 상품주문요청(CreateOrderRequest request) {
+    public static ExtractableResponse<Response> 상품주문요청(CreateOrderRequest request) {
         return RestAssured.given().log().all()
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .body(request)
