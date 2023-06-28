@@ -7,6 +7,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Repository
-interface OrderRepository extends JpaRepository<Order, Long> {
+public interface OrderRepository extends JpaRepository<Order, Long> {
 
 }
