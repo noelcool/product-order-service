@@ -9,7 +9,6 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "products")
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Product {
 
     @Id
